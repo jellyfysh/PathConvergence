@@ -1,0 +1,263 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8313,        253]
+NotebookOptionsPosition[      7031,        224]
+NotebookOutlinePosition[      7425,        240]
+CellTagsIndexPosition[      7382,        237]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Here we check that the normalization is OK", "Text",
+ CellChangeTimes->{{3.97923727426886*^9, 
+  3.9792372860889683`*^9}},ExpressionUUID->"f115b871-f773-4bf9-b398-\
+bcd162edb9e9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"2", " ", "Pi", " ", "t"}], " ", "]"}]}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"\[Alpha]", " ", 
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"x", " ", "-", " ", 
+             RowBox[{"a", " ", "t"}]}], " ", ")"}], " ", "^", "2"}]}], " ", 
+         "/", " ", 
+         RowBox[{"(", 
+          RowBox[{"2", " ", "t"}], ")"}]}], "]"}]}], " ", "+", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", " ", "-", " ", "\[Alpha]"}], ")"}], " ", 
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"x", " ", "-", " ", 
+             RowBox[{"b", " ", "t"}]}], " ", ")"}], " ", "^", "2"}]}], " ", 
+         "/", " ", 
+         RowBox[{"(", 
+          RowBox[{"2", " ", "t"}], ")"}]}], "]"}]}]}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "Infinity"}], ",", " ", "Infinity"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.9792368845151978`*^9, 3.979237064300705*^9}, {
+  3.9792371545980177`*^9, 3.9792371613991623`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"e1410b12-ec41-4976-b656-0cdea58acf2d"],
+
+Cell[BoxData[
+ RowBox[{
+  SqrtBox[
+   FractionBox["1", "t"]], " ", 
+  SqrtBox["t"]}]], "Output",
+ CellChangeTimes->{3.979237215034634*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"2068d7c7-88c0-4506-89b3-6a752b5399c2"]
+}, Open  ]],
+
+Cell["Here we check the mean value of the distribution", "Text",
+ CellChangeTimes->{{3.9792372984863873`*^9, 
+  3.979237308999196*^9}},ExpressionUUID->"4c6ffda9-1616-4701-80df-\
+8d32e954c8a8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "/", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"2", " ", "Pi", " ", "t"}], " ", "]"}]}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"\[Alpha]", " ", 
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"x", " ", "-", " ", 
+             RowBox[{"a", " ", "t"}]}], " ", ")"}], " ", "^", "2"}]}], " ", 
+         "/", " ", 
+         RowBox[{"(", 
+          RowBox[{"2", " ", "t"}], ")"}]}], "]"}]}], " ", "+", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", " ", "-", " ", "\[Alpha]"}], ")"}], " ", 
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"x", " ", "-", " ", 
+             RowBox[{"b", " ", "t"}]}], " ", ")"}], " ", "^", "2"}]}], " ", 
+         "/", " ", 
+         RowBox[{"(", 
+          RowBox[{"2", " ", "t"}], ")"}]}], "]"}]}]}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "Infinity"}], ",", " ", "Infinity"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.979237324401073*^9, 3.979237326039486*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"9df35059-d9c6-47d8-97c2-949efeff5019"],
+
+Cell[BoxData[
+ RowBox[{
+  SqrtBox[
+   FractionBox["1", "t"]], " ", 
+  SuperscriptBox["t", 
+   RowBox[{"3", "/", "2"}]], " ", 
+  RowBox[{"(", 
+   RowBox[{"b", "+", 
+    RowBox[{"a", " ", "\[Alpha]"}], "-", 
+    RowBox[{"b", " ", "\[Alpha]"}]}], ")"}]}]], "Output",
+ CellChangeTimes->{3.9792373916618357`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"a68374e1-a2cd-4b0a-b4c7-be20189d8eed"]
+}, Open  ]],
+
+Cell["Here we compute the variance", "Text",
+ CellChangeTimes->{{3.979237385430727*^9, 
+  3.9792373920495853`*^9}},ExpressionUUID->"d9985cbe-8e52-4466-96e8-\
+907e6e6ba808"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"x", "-", " ", 
+        RowBox[{"t", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"\[Alpha]", " ", "a"}], "  ", "+", " ", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "\[Alpha]"}], ")"}], "b"}]}], ")"}]}]}], ")"}],
+       "^", "2"}], "/", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"2", " ", "Pi", " ", "t"}], " ", "]"}]}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"\[Alpha]", " ", 
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"x", " ", "-", " ", 
+             RowBox[{"a", " ", "t"}]}], " ", ")"}], " ", "^", "2"}]}], " ", 
+         "/", " ", 
+         RowBox[{"(", 
+          RowBox[{"2", " ", "t"}], ")"}]}], "]"}]}], " ", "+", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", " ", "-", " ", "\[Alpha]"}], ")"}], " ", 
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"x", " ", "-", " ", 
+             RowBox[{"b", " ", "t"}]}], " ", ")"}], " ", "^", "2"}]}], " ", 
+         "/", " ", 
+         RowBox[{"(", 
+          RowBox[{"2", " ", "t"}], ")"}]}], "]"}]}]}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "Infinity"}], ",", " ", "Infinity"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.979237415286738*^9, 3.979237525404663*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"86817e5e-135f-4ae6-925e-9672f66a6841"],
+
+Cell[BoxData[
+ TemplateBox[{
+   RowBox[{"t", " ", 
+     RowBox[{"(", 
+       RowBox[{"1", "-", 
+         RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+              RowBox[{"a", "-", "b"}], ")"}], "2"], " ", "t", " ", 
+           RowBox[{"(", 
+             RowBox[{
+               RowBox[{"-", "1"}], "+", "\[Alpha]"}], ")"}], " ", 
+           "\[Alpha]"}]}], ")"}]}], 
+   RowBox[{
+     RowBox[{"Re", "[", "t", "]"}], "\[GreaterEqual]", "0"}]},
+  "ConditionalExpression"]], "Output",
+ CellChangeTimes->{3.979237777424056*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"d2a6f7a0-8c05-49e3-8e12-f4e7244725a4"]
+}, Open  ]],
+
+Cell["\<\
+We conclude that for small t, the variance of the distribution is unchanged, \
+and the mean is given by the mean of a and b, as expected. \
+\>", "Text",
+ CellChangeTimes->{{3.979237804018825*^9, 
+  3.979237864992796*^9}},ExpressionUUID->"0a7c4c11-f6dc-43ba-8ff6-\
+4ba50f983edc"]
+},
+WindowSize->{606, 665.25},
+WindowMargins->{{216, Automatic}, {Automatic, 27}},
+FrontEndVersion->"13.3 for Linux x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"bb59864e-7fb0-409c-851b-ac219eb6616e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 185, 3, 35, "Text",ExpressionUUID->"f115b871-f773-4bf9-b398-bcd162edb9e9"],
+Cell[CellGroupData[{
+Cell[768, 27, 1353, 39, 98, "Input",ExpressionUUID->"e1410b12-ec41-4976-b656-0cdea58acf2d"],
+Cell[2124, 68, 216, 6, 54, "Output",ExpressionUUID->"2068d7c7-88c0-4506-89b3-6a752b5399c2"]
+}, Open  ]],
+Cell[2355, 77, 192, 3, 35, "Text",ExpressionUUID->"4c6ffda9-1616-4701-80df-8d32e954c8a8"],
+Cell[CellGroupData[{
+Cell[2572, 84, 1298, 38, 98, "Input",ExpressionUUID->"9df35059-d9c6-47d8-97c2-949efeff5019"],
+Cell[3873, 124, 385, 11, 54, "Output",ExpressionUUID->"a68374e1-a2cd-4b0a-b4c7-be20189d8eed"]
+}, Open  ]],
+Cell[4273, 138, 172, 3, 35, "Text",ExpressionUUID->"d9985cbe-8e52-4466-96e8-907e6e6ba808"],
+Cell[CellGroupData[{
+Cell[4470, 145, 1632, 49, 76, "Input",ExpressionUUID->"86817e5e-135f-4ae6-925e-9672f66a6841"],
+Cell[6105, 196, 619, 17, 47, "Output",ExpressionUUID->"d2a6f7a0-8c05-49e3-8e12-f4e7244725a4"]
+}, Open  ]],
+Cell[6739, 216, 288, 6, 58, "Text",ExpressionUUID->"0a7c4c11-f6dc-43ba-8ff6-4ba50f983edc"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

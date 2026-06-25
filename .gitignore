@@ -1,0 +1,86 @@
+## PDF for all purposes, please add through "git add -f"
+*.pdf
+
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.spl
+
+## PyCharm IDE files:
+.idea/
+
+## Intermediate documents:
+*.swp
+*.backup
+*.dvi
+*-converted-to.*
+
+## these rules might exclude image files for figures etc.
+#*.ps
+#*.eps
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*Notes.bib
+*.brf
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+#temparory file for python
+*.pyc
+
+#build and run files for c++ code
+*.o
+*.nbi
+*.nbc
+*.el
+*.gz
+*.plist
+*.w
+*.txt
+*.xoj
+*.tex~
+
+# Exclude ignore for .pdf files in Talks/
+!Talks/*.pdf
+*.bib~
+
+# Pyenv files
+.python-version
+
+#MacOs specific directories
+.DS_Store
+
+#CPP exclude dynamic library
+*.so
+
+# data files for histograms and statistical tests
+**/histograms_data/**
+**/statistical_test_data/**
+
+# ignore jupyter notebooks
+*.ipynb
+
+uv.lock
+pyproject.toml
+.venv

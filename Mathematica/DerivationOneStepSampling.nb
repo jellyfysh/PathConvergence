@@ -1,0 +1,570 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19233,        562]
+NotebookOptionsPosition[     17264,        522]
+NotebookOutlinePosition[     17698,        539]
+CellTagsIndexPosition[     17655,        536]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["One-step forward construction", "Title",
+ CellChangeTimes->{{3.991227752824274*^9, 3.991227775488889*^9}, {
+  3.991401930251308*^9, 
+  3.991401931900549*^9}},ExpressionUUID->"c3f16e57-6216-4f83-8d47-\
+fdc049a0ccff"],
+
+Cell["\<\
+(see Holtzman, Beauvallet, Krauth: https://arxiv.org/abs/2606.12161)\
+\>", "Text",
+ CellChangeTimes->{
+  3.991401944472777*^9},ExpressionUUID->"084ef38d-1336-4026-9565-\
+f2c613ccec2d"],
+
+Cell[TextData[{
+ "Here we look at Eqs. (13) and (14), but exchange the integration in ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "\[Beta]"], TraditionalForm]],ExpressionUUID->
+  "e84ac404-10b1-4374-8fab-c0c7bd42a578"],
+ " and in ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", 
+    RowBox[{"\[Tau]", "+", "\[CapitalDelta]\[Tau]"}]], TraditionalForm]],
+  ExpressionUUID->"4543fac7-c3c3-42d5-84ff-0d6c1a75d080"],
+ ". We first integrate out over ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "\[Beta]"], TraditionalForm]],ExpressionUUID->
+  "29840148-7824-4d39-9252-8fb91970c0b7"],
+ "  all the terms that depend on it."
+}], "Text",
+ CellChangeTimes->{{3.991218757267487*^9, 3.991218757992131*^9}, {
+  3.9912188376239023`*^9, 3.991218922883223*^9}, {3.991218962084909*^9, 
+  3.991218971757577*^9}, {3.991225749051033*^9, 3.991225851988854*^9}, {
+  3.991366769753058*^9, 3.991366773709043*^9}, {3.991366813699605*^9, 
+  3.9913668253976593`*^9}},ExpressionUUID->"5ed4597b-cd48-4f38-a3f1-\
+e51d8160a5e4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"xbeta", "^", "2"}]}], " ", "/", " ", 
+      RowBox[{"(", 
+       RowBox[{"2", " ", 
+        RowBox[{"sigmaR", "^", "2"}]}], ")"}]}], "]"}], 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"xtau", " ", "-", " ", "xbeta"}], ")"}], " ", "^", "2"}]}], 
+      "/", " ", 
+      RowBox[{"(", 
+       RowBox[{"2", " ", 
+        RowBox[{"(", 
+         RowBox[{"beta", " ", "-", " ", "tau"}], ")"}]}], ")"}]}], "]"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"xtauplus", " ", "-", " ", "xbeta"}], ")"}], "^", "2"}]}], 
+      " ", "/", 
+      RowBox[{"(", 
+       RowBox[{"2", " ", 
+        RowBox[{"(", 
+         RowBox[{"beta", " ", "-", " ", "tau", " ", "-", " ", "Deltau"}], 
+         ")"}]}], ")"}]}], "]"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"xbeta", " ", "-", "xzero"}], ")"}], "^", "2"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", " ", "beta"}], ")"}]}], "]"}], " ", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"xtau", "-", "xbeta"}], ")"}], "^", "2"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", 
+        RowBox[{"(", 
+         RowBox[{"beta", " ", "-", " ", "tau"}], ")"}]}], ")"}]}], "]"}]}], 
+   ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"xbeta", ",", 
+     RowBox[{"-", "Infinity"}], ",", "Infinity"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.991221027033609*^9, 3.991221130630049*^9}, {
+   3.991222123953802*^9, 3.991222282264311*^9}, {3.991222313669248*^9, 
+   3.9912223743764668`*^9}, {3.991222443286048*^9, 3.991222457344756*^9}, {
+   3.991223232667212*^9, 3.991223306218128*^9}, {3.991223366219496*^9, 
+   3.991223373143985*^9}, 3.9912256247032814`*^9, {3.991374585449093*^9, 
+   3.9913745864856567`*^9}},ExpressionUUID->"6b8064a2-3c40-4394-8841-\
+cb71957c4ace"],
+
+Cell[BoxData[
+ TemplateBox[{
+   FractionBox[
+    RowBox[{
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{
+          RowBox[{
+            SuperscriptBox["sigmaR", "2"], " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+               RowBox[{"xtauplus", "-", "xzero"}], ")"}], "2"]}], "-", 
+          RowBox[{
+            RowBox[{"(", 
+              RowBox[{"Deltau", "+", "tau"}], ")"}], " ", 
+            SuperscriptBox["xzero", "2"]}], "+", 
+          RowBox[{"beta", " ", 
+            RowBox[{"(", 
+              RowBox[{
+                RowBox[{"-", 
+                  SuperscriptBox["xtauplus", "2"]}], "+", 
+                SuperscriptBox["xzero", "2"]}], ")"}]}]}], 
+        RowBox[{"2", " ", 
+          RowBox[{"(", 
+            RowBox[{
+              SuperscriptBox["beta", "2"], "-", 
+              RowBox[{"beta", " ", 
+                RowBox[{"(", 
+                  RowBox[{"Deltau", "+", "tau"}], ")"}]}], "+", 
+              RowBox[{
+                SuperscriptBox["sigmaR", "2"], " ", 
+                RowBox[{"(", 
+                  RowBox[{"Deltau", "+", "tau"}], ")"}]}]}], ")"}]}]]], " ", 
+      SqrtBox[
+       RowBox[{"2", " ", "\[Pi]"}]]}], 
+    SqrtBox[
+     RowBox[{
+       RowBox[{"-", 
+         FractionBox["1", "beta"]}], "+", 
+       FractionBox["1", 
+        SuperscriptBox["sigmaR", "2"]], "+", 
+       FractionBox["1", 
+        RowBox[{"beta", "-", "Deltau", "-", "tau"}]]}]]], 
+   RowBox[{
+     RowBox[{"Re", "[", 
+       RowBox[{
+         FractionBox["1", 
+          SuperscriptBox["sigmaR", "2"]], "+", 
+         FractionBox["1", 
+          RowBox[{"beta", "-", "Deltau", "-", "tau"}]]}], "]"}], ">", 
+     RowBox[{"Re", "[", 
+       FractionBox["1", "beta"], "]"}]}]},
+  "ConditionalExpression"]], "Output",
+ CellChangeTimes->{3.9912224910372453`*^9, 3.991223324855994*^9, 
+  3.991223388588192*^9, 3.991225649914695*^9},
+ CellLabel->"Out[37]=",ExpressionUUID->"f7d7466c-7610-4d87-9433-a5a7d1afca23"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Here we don't care about the constants, but now add to the exponent the \
+first term in eq. (14) that does not depend on ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "\[Beta]"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0d66e159-9329-4dcd-b23d-8ff902884d61"],
+ ". Then we organize in powers of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", 
+    RowBox[{"\[Tau]", "+", "\[CapitalDelta]\[Tau]"}]], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e819bdda-6bad-401d-bee1-07abf1d8bb7f"]
+}], "Text",
+ CellChangeTimes->{{3.991225986648848*^9, 3.9912260569104*^9}, {
+  3.9912261509622097`*^9, 3.99122619771305*^9}, {3.9913668316588783`*^9, 
+  3.991366847354127*^9}},ExpressionUUID->"51f984d9-1fe9-49be-8742-\
+96c0c9846a94"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["sigmaR", "2"], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"xtauplus", "-", "xzero"}], ")"}], "2"]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"Deltau", "+", "tau"}], ")"}], " ", 
+        SuperscriptBox["xzero", "2"]}], "+", 
+       RowBox[{"beta", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", 
+           SuperscriptBox["xtauplus", "2"]}], "+", 
+          SuperscriptBox["xzero", "2"]}], ")"}]}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"2", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["beta", "2"], "-", 
+         RowBox[{"beta", " ", 
+          RowBox[{"(", 
+           RowBox[{"Deltau", "+", "tau"}], ")"}]}], "+", 
+         RowBox[{
+          SuperscriptBox["sigmaR", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{"Deltau", "+", "tau"}], ")"}]}]}], ")"}]}], ")"}]}], " ", 
+    "-", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"xtau", " ", "-", "xtauplus"}], ")"}], "^", "2"}], " ", "/", 
+     RowBox[{"(", 
+      RowBox[{"2", " ", "Deltau"}], ")"}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"xtauplus", ",", "0", ",", "4"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.991224425087555*^9, 3.991224443585361*^9}, {
+  3.991224495930964*^9, 3.991224553865612*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"0e4be131-41fb-401a-a357-4d65e416ffb3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       SuperscriptBox["xtau", "2"], 
+       RowBox[{"2", " ", "Deltau"}]]}], "+", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"beta", " ", 
+        SuperscriptBox["xzero", "2"]}], "+", 
+       RowBox[{
+        SuperscriptBox["sigmaR", "2"], " ", 
+        SuperscriptBox["xzero", "2"]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"Deltau", "+", "tau"}], ")"}], " ", 
+        SuperscriptBox["xzero", "2"]}]}], 
+      RowBox[{"2", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["beta", "2"], "-", 
+         RowBox[{"beta", " ", 
+          RowBox[{"(", 
+           RowBox[{"Deltau", "+", "tau"}], ")"}]}], "+", 
+         RowBox[{
+          SuperscriptBox["sigmaR", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{"Deltau", "+", "tau"}], ")"}]}]}], ")"}]}]]}], ")"}], "+", 
+   
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["xtau", "Deltau"], "-", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["sigmaR", "2"], " ", "xzero"}], 
+       RowBox[{
+        SuperscriptBox["beta", "2"], "-", 
+        RowBox[{"beta", " ", 
+         RowBox[{"(", 
+          RowBox[{"Deltau", "+", "tau"}], ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["sigmaR", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"Deltau", "+", "tau"}], ")"}]}]}]]}], ")"}], " ", 
+    "xtauplus"}], "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"2", " ", "Deltau"}]]}], "+", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"-", "beta"}], "+", 
+        SuperscriptBox["sigmaR", "2"]}], 
+       RowBox[{"2", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["beta", "2"], "-", 
+          RowBox[{"beta", " ", 
+           RowBox[{"(", 
+            RowBox[{"Deltau", "+", "tau"}], ")"}]}], "+", 
+          RowBox[{
+           SuperscriptBox["sigmaR", "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{"Deltau", "+", "tau"}], ")"}]}]}], ")"}]}]]}], ")"}], " ", 
+    SuperscriptBox["xtauplus", "2"]}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "xtauplus", "]"}], "5"],
+    SeriesData[$CellContext`xtauplus, 0, {}, 0, 5, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`xtauplus, 
+   0, {(Rational[-1, 2]/$CellContext`Deltau) $CellContext`xtau^2 + (
+      Rational[1, 
+        2]/($CellContext`beta^2 - $CellContext`beta ($CellContext`Deltau + \
+$CellContext`tau) + $CellContext`sigmaR^2 ($CellContext`Deltau + \
+$CellContext`tau))) ($CellContext`beta $CellContext`xzero^2 + \
+$CellContext`sigmaR^2 $CellContext`xzero^2 - ($CellContext`Deltau + \
+$CellContext`tau) $CellContext`xzero^2), $CellContext`Deltau^(-1) \
+$CellContext`xtau - ($CellContext`sigmaR^2/($CellContext`beta^2 - \
+$CellContext`beta ($CellContext`Deltau + $CellContext`tau) + \
+$CellContext`sigmaR^2 ($CellContext`Deltau + $CellContext`tau))) \
+$CellContext`xzero, Rational[-1, 2]/$CellContext`Deltau + 
+    Rational[1, 
+       2] ((-$CellContext`beta + $CellContext`sigmaR^2)/($CellContext`beta^2 - \
+$CellContext`beta ($CellContext`Deltau + $CellContext`tau) + \
+$CellContext`sigmaR^2 ($CellContext`Deltau + $CellContext`tau)))}, 0, 5, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.9912245463219357`*^9, 3.991224556069621*^9}},
+ CellLabel->"Out[34]=",ExpressionUUID->"1d184e11-d1dd-40c0-93cf-eae1e3ceb5a0"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The term in front of the ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     SubscriptBox["x", 
+      RowBox[{"\[Tau]", "+", "\[CapitalDelta]\[Tau]"}]], ")"}], "2"], 
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "cbff4826-8335-42f1-ad38-758d606c7a81"],
+ ", up to a factor of two, is the inverse variance of the one-step Gaussian, \
+but that we can simplify a bit."
+}], "Text",
+ CellChangeTimes->{{3.991226282744453*^9, 3.991226337657861*^9}, {
+  3.991366862918818*^9, 3.991366872004068*^9}, {3.99136690366371*^9, 
+  3.991366910275921*^9}},ExpressionUUID->"b52a6cdf-a39f-4667-b37e-\
+e6a19337cc66"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"1", "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{" ", "Deltau"}]]}], "+", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"-", "beta"}], "+", 
+       SuperscriptBox["sigmaR", "2"]}], 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["beta", "2"], "-", 
+        RowBox[{"beta", " ", 
+         RowBox[{"(", 
+          RowBox[{"Deltau", "+", "tau"}], ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["sigmaR", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"Deltau", "+", "tau"}], ")"}]}]}], ")"}]]}], ")"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.991224999839981*^9, 3.9912250380210333`*^9}, {
+  3.991226221542989*^9, 3.991226224391341*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"ea7e67ea-2f33-4ca0-8019-22235b24ccec"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"Deltau", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["beta", "2"]}], "+", 
+     RowBox[{"beta", " ", 
+      RowBox[{"(", 
+       RowBox[{"Deltau", "+", "tau"}], ")"}]}], "-", 
+     RowBox[{
+      SuperscriptBox["sigmaR", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{"Deltau", "+", "tau"}], ")"}]}]}], ")"}]}], 
+  RowBox[{
+   SuperscriptBox["beta", "2"], "-", 
+   RowBox[{"beta", " ", "tau"}], "+", 
+   RowBox[{
+    SuperscriptBox["sigmaR", "2"], " ", "tau"}]}]]], "Output",
+ CellChangeTimes->{{3.991225011780489*^9, 3.9912250404334908`*^9}, 
+   3.9912262269044*^9},
+ CellLabel->"Out[38]=",ExpressionUUID->"60db7d15-038a-4aba-aca9-9eb51417b697"]
+}, Open  ]],
+
+Cell["\<\
+This is eq. (16), for the standard deviation of the Gaussian. 
+
+The mean value of the Gaussian is given by the ratio of the linear to the \
+square term.
+\
+\>", "Text",
+ CellChangeTimes->{{3.991226360581051*^9, 3.991226365532723*^9}, {
+  3.99122664868967*^9, 
+  3.991226701837925*^9}},ExpressionUUID->"cbc91116-00cb-4bac-8d2b-\
+744c48ab590b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox["xtau", "Deltau"], "-", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["sigmaR", "2"], " ", "xzero"}], 
+      RowBox[{
+       SuperscriptBox["beta", "2"], "-", 
+       RowBox[{"beta", " ", 
+        RowBox[{"(", 
+         RowBox[{"Deltau", "+", "tau"}], ")"}]}], "+", 
+       RowBox[{
+        SuperscriptBox["sigmaR", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{"Deltau", "+", "tau"}], ")"}]}]}]]}], ")"}], " ", "/", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{" ", "Deltau"}]], "+", 
+     FractionBox[
+      RowBox[{"beta", "-", 
+       SuperscriptBox["sigmaR", "2"]}], 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["beta", "2"], "-", 
+        RowBox[{"beta", " ", 
+         RowBox[{"(", 
+          RowBox[{"Deltau", "+", "tau"}], ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["sigmaR", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"Deltau", "+", "tau"}], ")"}]}]}], ")"}]]}], ")"}]}], " ", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.991226710108254*^9, 3.991226754209853*^9}, {
+  3.991226787406279*^9, 3.991226793759282*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"b46de926-602f-4ba7-bdc6-79074ce256d5"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["beta", "2"], " ", "xtau"}], "-", 
+   RowBox[{"beta", " ", 
+    RowBox[{"(", 
+     RowBox[{"Deltau", "+", "tau"}], ")"}], " ", "xtau"}], "+", 
+   RowBox[{
+    SuperscriptBox["sigmaR", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Deltau", "+", "tau"}], ")"}], " ", "xtau"}], "-", 
+      RowBox[{"Deltau", " ", "xzero"}]}], ")"}]}]}], 
+  RowBox[{
+   SuperscriptBox["beta", "2"], "-", 
+   RowBox[{"beta", " ", "tau"}], "+", 
+   RowBox[{
+    SuperscriptBox["sigmaR", "2"], " ", "tau"}]}]]], "Output",
+ CellChangeTimes->{3.9912267967900257`*^9},
+ CellLabel->"Out[40]=",ExpressionUUID->"629c7826-30bf-499e-8fa2-416c5a7c7585"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.991227194753605*^9, 
+  3.991227198903084*^9}},ExpressionUUID->"95ba078c-b8a5-4d60-81d7-\
+2249d374f442"],
+
+Cell[TextData[{
+ "This is eq. (15) for the mean value of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", 
+    RowBox[{"\[Tau]", "+", "\[CapitalDelta]\[Tau]"}]], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "252189e1-a4bc-4d45-be30-3ffb149bb0d7"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.991227208115775*^9, 3.991227256811079*^9}, 
+   3.991227314553794*^9, 
+   3.991366878156981*^9},ExpressionUUID->"55a70e18-7432-4e8c-986e-\
+0ef3b3ed2edf"]
+}, Open  ]]
+},
+WindowSize->{846, 762},
+WindowMargins->{{Automatic, 112.5}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.3 for Linux x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3d7dbcf9-650d-4314-9fa6-d78380d3af6c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 221, 4, 98, "Title",ExpressionUUID->"c3f16e57-6216-4f83-8d47-fdc049a0ccff"],
+Cell[804, 28, 194, 5, 35, "Text",ExpressionUUID->"084ef38d-1336-4026-9565-f2c613ccec2d"],
+Cell[1001, 35, 1010, 24, 58, "Text",ExpressionUUID->"5ed4597b-cd48-4f38-a3f1-e51d8160a5e4"],
+Cell[CellGroupData[{
+Cell[2036, 63, 2079, 60, 76, "Input",ExpressionUUID->"6b8064a2-3c40-4394-8841-cb71957c4ace"],
+Cell[4118, 125, 1976, 55, 141, "Output",ExpressionUUID->"f7d7466c-7610-4d87-9433-a5a7d1afca23"]
+}, Open  ]],
+Cell[6109, 183, 791, 19, 58, "Text",ExpressionUUID->"51f984d9-1fe9-49be-8742-96c0c9846a94"],
+Cell[CellGroupData[{
+Cell[6925, 206, 1527, 45, 76, "Input",ExpressionUUID->"0e4be131-41fb-401a-a357-4d65e416ffb3"],
+Cell[8455, 253, 3470, 94, 161, "Output",ExpressionUUID->"1d184e11-d1dd-40c0-93cf-eae1e3ceb5a0"]
+}, Open  ]],
+Cell[11940, 350, 659, 17, 58, "Text",ExpressionUUID->"b52a6cdf-a39f-4667-b37e-e6a19337cc66"],
+Cell[CellGroupData[{
+Cell[12624, 371, 852, 25, 57, "Input",ExpressionUUID->"ea7e67ea-2f33-4ca0-8019-22235b24ccec"],
+Cell[13479, 398, 717, 21, 59, "Output",ExpressionUUID->"60db7d15-038a-4aba-aca9-9eb51417b697"]
+}, Open  ]],
+Cell[14211, 422, 351, 10, 104, "Text",ExpressionUUID->"cbc91116-00cb-4bac-8d2b-744c48ab590b"],
+Cell[CellGroupData[{
+Cell[14587, 436, 1284, 38, 107, "Input",ExpressionUUID->"b46de926-602f-4ba7-bdc6-79074ce256d5"],
+Cell[15874, 476, 741, 22, 59, "Output",ExpressionUUID->"629c7826-30bf-499e-8fa2-416c5a7c7585"]
+}, Open  ]],
+Cell[16630, 501, 152, 3, 29, "Input",ExpressionUUID->"95ba078c-b8a5-4d60-81d7-2249d374f442"],
+Cell[16785, 506, 463, 13, 35, "Text",ExpressionUUID->"55a70e18-7432-4e8c-986e-0ef3b3ed2edf"]
+}, Open  ]]
+}
+]
+*)
+

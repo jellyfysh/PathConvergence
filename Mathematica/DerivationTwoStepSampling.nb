@@ -1,0 +1,326 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10667,        318]
+NotebookOptionsPosition[      9379,        289]
+NotebookOutlinePosition[      9773,        305]
+CellTagsIndexPosition[      9730,        302]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Two-step forward construction", "Title",
+ CellChangeTimes->{{3.991359640104151*^9, 
+  3.991359645817045*^9}},ExpressionUUID->"354f5765-b644-48c7-9556-\
+d56c6cf78086"],
+
+Cell["\<\
+(see Holtzman, Beauvallet, Krauth: https://arxiv.org/abs/2606.12161)\
+\>", "Subtitle",
+ CellChangeTimes->{{3.9913594022507143`*^9, 3.991359423470608*^9}, {
+  3.991359456613573*^9, 
+  3.991359470739489*^9}},ExpressionUUID->"3e04c901-8d07-4ad3-9cdf-\
+027c1b00a55a"],
+
+Cell[TextData[{
+ "The two step forward construction uses eq. (13) to sample ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "\[Beta]"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8c01a5cf-d1e3-47bc-be10-ebfb14029bf7"],
+ " as a Gaussian, and then given ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "\[Beta]"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "44bb3e5e-677f-4638-946f-c832e5ce717f"],
+ " together with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "0"], ",", " ", 
+    SubscriptBox["x", "\[Tau]"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8572c08f-4191-47e9-8d92-c0a4b67eadb6"],
+ ", we construct ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", 
+    RowBox[{"\[Tau]", "+", "\[CapitalDelta]\[Tau]"}]], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fcaf8c84-825e-4268-aebb-a49bc38c6be7"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.991396109841359*^9, 
+  3.991396190210889*^9}},ExpressionUUID->"5eb99477-5d76-4e9a-bc06-\
+1c15e3f26dc1"],
+
+Cell[TextData[{
+ "Since ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "\[Beta]"], TraditionalForm]],ExpressionUUID->
+  "e8719111-5938-4646-bbf8-2d9b90331e2d"],
+ " is a Gaussian, we only need the mean and the variance. From eq. (13), \
+there are three exponential terms that depend on ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "\[Beta]"], TraditionalForm]],ExpressionUUID->
+  "da088641-7f79-4c37-bdcc-1635df64e8c5"],
+ ". We expand the terms to get the quadratic and linear terms in ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "\[Beta]"], TraditionalForm]],ExpressionUUID->
+  "55f6a871-4dcd-44cd-9d6a-63f9f78a2159"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.991218482626663*^9, 3.991218546769815*^9}, {
+  3.9913958185076942`*^9, 3.991395831052052*^9}, {3.9913961947884493`*^9, 
+  3.991396288958593*^9}, {3.9914018070612907`*^9, 
+  3.991401807923375*^9}},ExpressionUUID->"cd4864b3-c742-4ab5-8f66-\
+07c90b728598"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      SuperscriptBox["xbeta", "2"], 
+      RowBox[{"2", " ", 
+       RowBox[{"sigmaR", "^", "2"}]}]]}], "-", 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "xbeta"}], "+", "xtau"}], ")"}], "2"], 
+     RowBox[{"2", " ", 
+      RowBox[{"(", 
+       RowBox[{"beta", "-", "tau"}], ")"}]}]], "+", 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "xbeta"}], "+", "xzero"}], ")"}], "2"], 
+     RowBox[{"2", " ", "beta"}]]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"xbeta", ",", "0", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9912141451939487`*^9, 3.991214158847006*^9}, {
+  3.9912142984712276`*^9, 3.99121430336761*^9}, {3.991217329839406*^9, 
+  3.991217330145623*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"ab7611bb-c7e5-452c-880f-caf15223b931"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       SuperscriptBox["xtau", "2"], 
+       RowBox[{"2", " ", 
+        RowBox[{"(", 
+         RowBox[{"beta", "-", "tau"}], ")"}]}]]}], "+", 
+     FractionBox[
+      SuperscriptBox["xzero", "2"], 
+      RowBox[{"2", " ", "beta"}]]}], ")"}], "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["xtau", 
+       RowBox[{"beta", "-", "tau"}]], "-", 
+      FractionBox["xzero", "beta"]}], ")"}], " ", "xbeta"}], "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"2", " ", "beta"}]], "-", 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["sigmaR", "2"]}]], "-", 
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        RowBox[{"(", 
+         RowBox[{"beta", "-", "tau"}], ")"}]}]]}], ")"}], " ", 
+    SuperscriptBox["xbeta", "2"]}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "xbeta", "]"}], "4"],
+    SeriesData[$CellContext`xbeta, 0, {}, 0, 4, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`xbeta, 0, {
+   Rational[-1, 
+       2] ($CellContext`beta - $CellContext`tau)^(-1) $CellContext`xtau^2 + 
+    Rational[1, 
+       2] $CellContext`beta^(-1) $CellContext`xzero^2, ($CellContext`beta - \
+$CellContext`tau)^(-1) $CellContext`xtau - $CellContext`beta^(-1) \
+$CellContext`xzero, Rational[1, 2]/$CellContext`beta + 
+    Rational[-1, 2] $CellContext`sigmaR^(-2) + 
+    Rational[-1, 2]/($CellContext`beta - $CellContext`tau)}, 0, 4, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.991214159288232*^9, 3.991214305746507*^9, 
+  3.991217334754375*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"134acbce-52cc-417f-a49d-bb9c0d258994"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Here we have the form ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], "a", " ", 
+     SuperscriptBox[
+      SubscriptBox["x", "\[Beta]"], "2"]}], " ", "+", " ", 
+    RowBox[{"b", " ", 
+     SubscriptBox["x", "\[Beta]"]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ba1273ad-fe4e-4974-b48d-61282ec4f0d1"],
+ ", from which it follows that the standard deviation is ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", 
+    SqrtBox["a"]], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7eba38c7-e4f3-4950-9519-fe06d7c46cab"],
+ " and the mean value is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"b", "/", "a"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c7a3de30-4918-45ef-8f00-cf63402f3062"],
+ ".  We can simplify the mean value a little bit: "
+}], "Text",
+ CellChangeTimes->{{3.991218757267487*^9, 3.9912187579921308`*^9}, {
+  3.9912188376239023`*^9, 3.991218922883223*^9}, {3.991218962084909*^9, 
+  3.991218971757577*^9}, {3.991395847037219*^9, 3.991395891500208*^9}, {
+  3.9913960856856937`*^9, 
+  3.9913960860945063`*^9}},ExpressionUUID->"5ed4597b-cd48-4f38-a3f1-\
+e51d8160a5e4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"xtau", "/", 
+      RowBox[{"(", 
+       RowBox[{"beta", "-", "tau"}], ")"}]}], " ", "-", " ", 
+     RowBox[{"xzero", "/", "beta"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"1", "/", 
+      RowBox[{"sigmaR", "^", "2"}]}], " ", "+", " ", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"beta", " ", "-", " ", "tau"}], ")"}]}], " ", "-", " ", 
+     RowBox[{"1", "/", "beta"}]}], ")"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9912175330972548`*^9, 3.991217592721858*^9}, {
+  3.99121767726978*^9, 3.991217723603613*^9}, {3.9912177877168093`*^9, 
+  3.991217791095469*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"8587339b-76c5-4d54-870d-a70c0d0f2a93"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["sigmaR", "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"beta", " ", 
+      RowBox[{"(", 
+       RowBox[{"xtau", "-", "xzero"}], ")"}]}], "+", 
+     RowBox[{"tau", " ", "xzero"}]}], ")"}]}], 
+  RowBox[{
+   SuperscriptBox["beta", "2"], "-", 
+   RowBox[{"beta", " ", "tau"}], "+", 
+   RowBox[{
+    SuperscriptBox["sigmaR", "2"], " ", "tau"}]}]]], "Output",
+ CellChangeTimes->{3.991217731250414*^9, 3.991217799677267*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"bc7df69c-2f0f-495b-ab49-0bae56fe8b0e"]
+}, Open  ]],
+
+Cell[TextData[{
+ "After choosing ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "\[Beta]"], TraditionalForm]],ExpressionUUID->
+  "c914cd47-c73e-454f-b1b4-47a9804d612e"],
+ ", we sample ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", 
+    RowBox[{"\[Tau]", "+", "\[CapitalDelta]\[Tau]"}]], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "556e4930-21c9-4b38-9a8f-1f4b2fb78244"],
+ " as a Gaussian bridge between ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "\[Tau]"], TraditionalForm]],ExpressionUUID->
+  "91f03cb6-d15d-45b5-a42f-32d64e63be4e"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "\[Beta]"], TraditionalForm]],ExpressionUUID->
+  "12bf6c31-7321-47ef-8467-2c818de3cbf7"],
+ ". These  are implemented in the program forward_construction_2.py. "
+}], "Text",
+ CellChangeTimes->{{3.991396100371668*^9, 3.9913961040381393`*^9}, {
+  3.9913962990901823`*^9, 
+  3.991396354806827*^9}},ExpressionUUID->"86ff338b-25ea-4693-b210-\
+02edfd3240c6"]
+}, Open  ]]
+},
+WindowSize->{727.5, 666},
+WindowMargins->{{Automatic, 298.5}, {0, Automatic}},
+FrontEndVersion->"13.3 for Linux x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"954e114d-22aa-4e2c-9b8c-d578496f0db0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 172, 3, 98, "Title",ExpressionUUID->"354f5765-b644-48c7-9556-d56c6cf78086"],
+Cell[755, 27, 273, 6, 85, "Subtitle",ExpressionUUID->"3e04c901-8d07-4ad3-9cdf-027c1b00a55a"],
+Cell[1031, 35, 1066, 32, 58, "Text",ExpressionUUID->"5eb99477-5d76-4e9a-bc06-1c15e3f26dc1"],
+Cell[2100, 69, 925, 23, 82, "Text",ExpressionUUID->"cd4864b3-c742-4ab5-8f66-07c90b728598"],
+Cell[CellGroupData[{
+Cell[3050, 96, 949, 28, 52, "Input",ExpressionUUID->"ab7611bb-c7e5-452c-880f-caf15223b931"],
+Cell[4002, 126, 1759, 50, 103, "Output",ExpressionUUID->"134acbce-52cc-417f-a49d-bb9c0d258994"]
+}, Open  ]],
+Cell[5776, 179, 1223, 34, 65, "Text",ExpressionUUID->"5ed4597b-cd48-4f38-a3f1-e51d8160a5e4"],
+Cell[CellGroupData[{
+Cell[7024, 217, 777, 20, 54, "Input",ExpressionUUID->"8587339b-76c5-4d54-870d-a70c0d0f2a93"],
+Cell[7804, 239, 563, 16, 59, "Output",ExpressionUUID->"bc7df69c-2f0f-495b-ab49-0bae56fe8b0e"]
+}, Open  ]],
+Cell[8382, 258, 981, 28, 58, "Text",ExpressionUUID->"86ff338b-25ea-4693-b210-02edfd3240c6"]
+}, Open  ]]
+}
+]
+*)
+
